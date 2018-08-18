@@ -31,7 +31,7 @@ test -x $DAEMON || exit 0
 mkdir -p /var/run/cups/certs
 [ -x /sbin/restorecon ] && /sbin/restorecon -R /var/run/cups
 
-	case "$1" in
+case "$1" in
   start)
 	log_daemon_msg "Starting $DESC" "$NAME"
 

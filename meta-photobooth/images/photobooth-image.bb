@@ -18,9 +18,11 @@ KERNEL_MODULE_AUTOLOAD += "usbtouchscreen"
 
 DISTRO_FEATURES_remove = "x11 wayland"
 
+BAD_RECOMMENDATIONS = "avahi-daemon avahi-autoipd"
+
 #MACHINE_EXTRA_RRECOMMENDS = "kernel-modules"
 	
-IMAGE_INSTALL += "qtbooth qgphotoplugin openssh openssh-keygen openssh-sftp-server usbutils gphoto2 htop qt5-env userland tslib tslib-tests rc-local"
+IMAGE_INSTALL += "qtbooth qgphotoplugin openssh openssh-keygen openssh-sftp-server usbutils gphoto2 htop qt5-env userland tslib tslib-tests sshd hostapd dnsmasq resize-rootfs"
 
 disable_bootlogd() {
     echo BOOTLOGD_ENABLE=no > ${IMAGE_ROOTFS}/etc/default/bootlogd
@@ -31,3 +33,4 @@ ROOTFS_POSTPROCESS_COMMAND += " \
  "
 
 export IMAGE_BASENAME = "photobooth-image"
+	

@@ -15,8 +15,8 @@ DEPENDS = "qtmultimedia libgphoto2"
 
 RDEPENDS_${PN} = "qtmultimedia"
 
-SRC_URI = "git://github.com/dept2/qtmultimedia-gphoto.git"
+SRC_URI = "git://github.com/saeugetier/qtmultimedia-gphoto.git"
 
-SRCREV = "1d4f1890e6695ffea9c1082dffc4005f67abfe27"
+SRCREV = "2e59f8f3c1e2b95391e7b9739f136ab8bc330148"
 
 FILES_${PN} += "/usr/lib/qt5/plugins/mediaservice/libgphoto.so"

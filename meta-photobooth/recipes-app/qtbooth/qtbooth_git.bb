@@ -4,27 +4,37 @@ LICENSE = "LGPLv2.1+ & GFDL-1.2"
 LIC_FILES_CHKSUM = "file://COPYING.DOC;md5=ad1419ecc56e060eccf8184a87c4285f \
                     file://COPYING.LIB;md5=2d5025d4aa3495befef8f17206a5b0a1"
 
-DEPENDS = "qtbase qtmultimedia qtdeclarative qtquickcontrols2 imagemagick cups"
+DEPENDS = "qtbase qtmultimedia qtdeclarative qtquickcontrols2 wiringpi"
 
-SRC_URI = "git://github.com/saeugetier/photobooth.git"
-SRCREV = "${AUTOREV}"
+PVBASE := "${PV}"
+FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}-${PVBASE}:"
+PV = "${PVBASE}+${SRCPV}"
+BB_SRCREV_POLICY = "clear"
+SRC_URI = "git://github.com/saeugetier/photobooth.git file://x_qtbooth.profile.sh"
+#SRCREV = "${AUTOREV}"
+SRCREV = "54445c68703753100556be6787e5f75ff1400dbd"
 S = "${WORKDIR}/git/software/qtbooth"
 
 require recipes-qt/qt5/qt5.inc
 
 inherit qmake5
 
-RDEPENDS_${PN} = "qtbase-plugins qtdeclarative-qmlplugins qtquickcontrols qtquickcontrols2 qtquickcontrols2-qmlplugins qtdeclarative tslib tslib-conf tslib-calibrate fontconfig fontconfig-utils ttf-bitstream-vera"
+RDEPENDS_${PN} = "qtbase-plugins qtdeclarative-qmlplugins qtquickcontrols qtquickcontrols2 qtquickcontrols2-qmlplugins qtvirtualkeyboard qtdeclarative tslib tslib-conf tslib-calibrate fontconfig fontconfig-utils ttf-bitstream-vera selphy"
 
 
-inherit update-rc.d
+#inherit update-rc.d
 
-INITSCRIPT_NAME = "qtbooth"
-INITSCRIPT_PARAMS = "defaults 80"
+#INITSCRIPT_NAME = "qtbooth"
+#INITSCRIPT_PARAMS = "defaults 80"
 
 do_install() {
     install -m 0755 -d ${D}${bindir}
     install -m 0755 ${B}/qtbooth ${D}${bindir}
+    install -d ${D}${sysconfdir}/profile.d
+    install -m 0755 ${WORKDIR}/x_qtbooth.profile.sh ${D}${sysconfdir}/profile.d
+    install -m 0755 -d ${D}/home/root/Pictures
+    install -m 0755 -d ${D}/home/root/Pictures/collage
 }
 
 FILES_${PN} += "${datadir}"
+FILES_${PN} += "/home/*"

@@ -7,9 +7,8 @@ export QT_QPA_PLATFORM=eglfs
 
 # physical width and height units are mm
 
-# for the official Pi 7" touchscreen
-#export QT_QPA_EGLFS_PHYSICAL_WIDTH=155
-#export QT_QPA_EGLFS_PHYSICAL_HEIGHT=86
+export QT_QPA_EGLFS_PHYSICAL_WIDTH=310
+export QT_QPA_EGLFS_PHYSICAL_HEIGHT=240
 
 # for the pitft35r 480x320 touchscreen
 #export QT_QPA_EGLFS_WIDTH=480
@@ -26,6 +25,8 @@ export QT_QPA_PLATFORM=eglfs
 #export QT_QPA_EGLFS_PHYSICAL_HEIGHT=50
 # set a rotate value appropriate with the one used in the overlay 
 #export QT_QPA_EVDEV_TOUCHSCREEN_PARAMETERS=/dev/input/touchscreen0:rotate=90
+
+export QT_QPA_FB_TSLIB=1
 
 if [ -z "${XDG_RUNTIME_DIR}" ]; then
     export XDG_RUNTIME_DIR=/tmp/user/${UID}
