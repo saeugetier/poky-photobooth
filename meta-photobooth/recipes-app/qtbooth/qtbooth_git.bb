@@ -11,8 +11,8 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}-${PVBASE}:"
 PV = "${PVBASE}+${SRCPV}"
 BB_SRCREV_POLICY = "clear"
 SRC_URI = "git://github.com/saeugetier/photobooth.git file://x_qtbooth.profile.sh"
-#SRCREV = "${AUTOREV}"
-SRCREV = "54445c68703753100556be6787e5f75ff1400dbd"
+SRCREV = "${AUTOREV}"
+#SRCREV = "54445c68703753100556be6787e5f75ff1400dbd"
 S = "${WORKDIR}/git/software/qtbooth"
 
 require recipes-qt/qt5/qt5.inc
