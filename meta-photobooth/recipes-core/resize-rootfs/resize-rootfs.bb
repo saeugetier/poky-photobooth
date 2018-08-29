@@ -4,10 +4,10 @@ LIC_FILES_CHKSUM = "file://${COREBASE}/meta/files/common-licenses/GPL-2.0;md5=80
 
 SRC_URI = "file://resize-rootfs.init"
 
-inherit update-rc.d
-
 INITSCRIPT_NAME = "resize-rootfs"
 INITSCRIPT_PARAMS = "start 10 S ."
+
+inherit update-rc.d
 
 RDEPENDS_${PN} = "e2fsprogs-resize2fs parted util-linux-fdisk"
 
