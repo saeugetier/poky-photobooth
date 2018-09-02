@@ -48,7 +48,7 @@ EOF
   partprobe
 
   echo "Resizing the partition... "
-  resize2fs /dev/mmcblk0p2   || return $?
+  resize2fs -p /dev/mmcblk0p2   || return $?
 }
 
 case "$1" in
