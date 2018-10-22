@@ -34,6 +34,7 @@ do_install() {
     install -m 0755 ${WORKDIR}/x_qtbooth.profile.sh ${D}${sysconfdir}/profile.d
     install -m 0755 -d ${D}/home/root/Pictures
     install -m 0755 -d ${D}/home/root/Pictures/collage
+    install -m 0755 -d ${D}/home/root/Pictures/recycle
 }
 
 FILES_${PN} += "${datadir}"
