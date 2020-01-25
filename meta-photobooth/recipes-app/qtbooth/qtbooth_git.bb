@@ -1,8 +1,7 @@
 SUMMARY = "Qt5 Photobooth Application"
 DESCRIPTION = "Test"
-LICENSE = "LGPLv2.1+ & GFDL-1.2"
-LIC_FILES_CHKSUM = "file://COPYING.DOC;md5=ad1419ecc56e060eccf8184a87c4285f \
-                    file://COPYING.LIB;md5=2d5025d4aa3495befef8f17206a5b0a1"
+LICENSE = "GPLv3+"
+LIC_FILES_CHKSUM = "file://LICENSE.GPL3;md5=d32239bcb673463ab874e80d47fae504"
 
 DEPENDS = "qtbase qtmultimedia qtdeclarative qtquickcontrols2 wiringpi"
 
@@ -11,8 +10,8 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}-${PVBASE}:"
 PV = "${PVBASE}+${SRCPV}"
 BB_SRCREV_POLICY = "clear"
 SRC_URI = "git://github.com/saeugetier/photobooth.git file://x_qtbooth.profile.sh"
-SRCREV = "${AUTOREV}"
-#SRCREV = "54445c68703753100556be6787e5f75ff1400dbd"
+#SRCREV = "${AUTOREV}"
+SRCREV = "db6513cf208b78fb4c2df668bfb8e3b1dffb71b5"
 S = "${WORKDIR}/git/software/qtbooth"
 
 require recipes-qt/qt5/qt5.inc
