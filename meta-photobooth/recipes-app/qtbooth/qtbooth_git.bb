@@ -2,6 +2,7 @@ SUMMARY = "Qt5 Photobooth Application"
 DESCRIPTION = "Test"
 LICENSE = "GPLv3+"
 LIC_FILES_CHKSUM = "file://LICENSE.GPL3;md5=d32239bcb673463ab874e80d47fae504"
+SECTION = "application/multimedia"
 
 DEPENDS = "qtbase qtmultimedia qtdeclarative qtquickcontrols2 wiringpi"
 
@@ -18,6 +19,10 @@ require recipes-qt/qt5/qt5.inc
 
 inherit qmake5
 
+PACKAGES_remove = "${PN}-tools"
+
+COMPATIBLE_MACHINE = "^rpi$"
+
 RDEPENDS_${PN} = "qtbase-plugins qtdeclarative-qmlplugins qtquickcontrols qtquickcontrols2 qtgraphicaleffects qtquickcontrols2-qmlplugins qtvirtualkeyboard qtdeclarative tslib tslib-conf tslib-calibrate fontconfig fontconfig-utils ttf-bitstream-vera selphy udev-extraconf gphoto2"
 
 
@@ -26,7 +31,7 @@ RDEPENDS_${PN} = "qtbase-plugins qtdeclarative-qmlplugins qtquickcontrols qtquic
 #INITSCRIPT_NAME = "qtbooth"
 #INITSCRIPT_PARAMS = "defaults 80"
 
-do_install() {
+do_install_append() {
     install -m 0755 -d ${D}${bindir}
     install -m 0755 ${B}/qtbooth ${D}${bindir}
     install -d ${D}${sysconfdir}/profile.d
@@ -38,3 +43,9 @@ do_install() {
 
 FILES_${PN} += "${datadir}"
 FILES_${PN} += "/home/*"
+FILES_${PN} += "/usr/bin/qtbooth"
+
+
+FILES_${PN}_tools = ""
+
+
