@@ -14,4 +14,4 @@ SRC_URI = "git://github.com/saeugetier/qtmultimedia-gphoto.git"
 SRCREV = "484844d562e237276fac4fa461a0bc92e708b906"
 #SRCREV = "${AUTOREV}"
 
-FILES_${PN} += "/usr/lib/qt5/plugins/mediaservice/libgphoto.so"
+FILES_${PN} += "/usr/lib/plugins/mediaservice/libgphoto.so"
