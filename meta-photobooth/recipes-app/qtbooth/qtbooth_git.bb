@@ -15,8 +15,6 @@ SRC_URI = "git://github.com/saeugetier/photobooth.git file://x_qtbooth.profile.s
 SRCREV = "db6513cf208b78fb4c2df668bfb8e3b1dffb71b5"
 S = "${WORKDIR}/git/software/qtbooth"
 
-require recipes-qt/qt5/qt5.inc
-
 inherit qmake5
 
 PACKAGES_remove = "${PN}-tools"
@@ -24,12 +22,6 @@ PACKAGES_remove = "${PN}-tools"
 COMPATIBLE_MACHINE = "^rpi$"
 
 RDEPENDS_${PN} = "qtbase-plugins qtdeclarative-qmlplugins qtquickcontrols qtquickcontrols2 qtgraphicaleffects qtquickcontrols2-qmlplugins qtvirtualkeyboard qtdeclarative tslib tslib-conf tslib-calibrate fontconfig fontconfig-utils ttf-bitstream-vera selphy udev-extraconf gphoto2"
-
-
-#inherit update-rc.d
-
-#INITSCRIPT_NAME = "qtbooth"
-#INITSCRIPT_PARAMS = "defaults 80"
 
 do_install_append() {
     install -m 0755 -d ${D}${bindir}
@@ -45,7 +37,5 @@ FILES_${PN} += "${datadir}"
 FILES_${PN} += "/home/*"
 FILES_${PN} += "/usr/bin/qtbooth"
 
-
 FILES_${PN}_tools = ""
-
 
