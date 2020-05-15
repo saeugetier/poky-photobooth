@@ -19,3 +19,4 @@ do_install_append() {
 }
 
 RDEPENDS_${PN} = "bash"
+RDEPENDS_${PN}-dev = "bash"
