@@ -22,7 +22,7 @@ BAD_RECOMMENDATIONS = "avahi-daemon avahi-autoipd"
 
 #MACHINE_EXTRA_RRECOMMENDS = "kernel-modules"
 	
-IMAGE_INSTALL += "qtbooth qgphotoplugin openssh openssh-keygen openssh-sftp-server usbutils gphoto2 htop qt5-env userland tslib tslib-tests sshd hostapd dnsmasq resize-rootfs"
+IMAGE_INSTALL += "kernel-modules qtbooth qgphotoplugin openssh openssh-keygen openssh-sftp-server usbutils gphoto2 htop qt5-env userland tslib tslib-tests tslib-conf tslib-calibrate sshd hostapd dnsmasq resize-rootfs i2c-tools qqtest"
 
 disable_bootlogd() {
     echo BOOTLOGD_ENABLE=no > ${IMAGE_ROOTFS}/etc/default/bootlogd
