@@ -6,15 +6,13 @@ LIC_FILES_CHKSUM = "file://COPYING.LESSER;md5=e6a600fd5e1d9cbde2d983680233ad02"
 
 DEPENDS += "virtual/crypt"
 
-# tag 2.46
-SRCREV = "8d188fa0e00bb8c6ff6eddd07bf92857e9bd533a"
+SRCREV = "5bbb6e34b854a1a911e85145741681b875aec1a4"
 
 S = "${WORKDIR}/git"
 
-SRC_URI = "https://github.com/WiringPi/WiringPi.git"
-
-SRC_URI[md5sum] = "946c0df16e2a69a321c84e446cbde9ab"
-SRC_URI[sha256sum] = "05e2e92d47e2aa8d0d08bc983e33f9f12b525856d2158257c0c55893493a147c"
+SRC_URI = "git://github.com/WiringPi/WiringPi.git \
+           file://0001-Add-initial-cross-compile-support.patch \
+           "
 
 COMPATIBLE_MACHINE = "^rpi$"
 
