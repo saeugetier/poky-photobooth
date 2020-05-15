@@ -4,16 +4,16 @@ LICENSE = "GPLv3+"
 LIC_FILES_CHKSUM = "file://LICENSE.GPL3;md5=d32239bcb673463ab874e80d47fae504"
 SECTION = "application/multimedia"
 
-DEPENDS = "qtbase qtmultimedia qtdeclarative qtquickcontrols2 wiringpi"
+DEPENDS = "qtbase qtmultimedia qtdeclarative qtquickcontrols2 qtsvg"
 
 PVBASE := "${PV}"
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}-${PVBASE}:"
 PV = "${PVBASE}+${SRCPV}"
 BB_SRCREV_POLICY = "clear"
-SRC_URI = "git://github.com/saeugetier/photobooth.git file://x_qtbooth.profile.sh"
+SRC_URI = "git://github.com/saeugetier/photobooth.git;branch=develop file://x_qtbooth.profile.sh"
 #SRCREV = "${AUTOREV}"
-SRCREV = "db6513cf208b78fb4c2df668bfb8e3b1dffb71b5"
-S = "${WORKDIR}/git/software/qtbooth"
+SRCREV = "11bb68501357bf049c1d551a9dd0ae329395c9a0"
+S = "${WORKDIR}/git"
 
 inherit qmake5
 
