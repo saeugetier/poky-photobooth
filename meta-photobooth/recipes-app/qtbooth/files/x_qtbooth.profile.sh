@@ -10,9 +10,9 @@ if gphoto2 --auto-detect | grep -q "usb"; then
    echo "Camera available"
 else
    echo "wake up camera"
-   echo "6=1" > /dev/pi-blaster
+   echo "25=1" > /dev/pi-blaster
    sleep 0.2
-   echo "6=0" > /dev/pi-blaster
+   echo "25=0" > /dev/pi-blaster
    sleep 2
 fi
 
