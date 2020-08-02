@@ -12,7 +12,7 @@ PV = "${PVBASE}+${SRCPV}"
 BB_SRCREV_POLICY = "clear"
 SRC_URI = "git://github.com/saeugetier/photobooth.git;branch=develop file://x_qtbooth.profile.sh"
 #SRCREV = "${AUTOREV}"
-SRCREV = "fd2ad9bc274c4c6390f1541e199d6dda052bdb0e"
+SRCREV = "63cfc6c263438a09a38957145ada18d72daa6874"
 S = "${WORKDIR}/git"
 
 inherit qmake5
@@ -21,7 +21,7 @@ PACKAGES_remove = "${PN}-tools"
 
 COMPATIBLE_MACHINE = "^rpi$"
 
-RDEPENDS_${PN} = "qtbase-plugins qtdeclarative-qmlplugins qtquickcontrols qtquickcontrols2 qtgraphicaleffects qtquickcontrols2-qmlplugins qtvirtualkeyboard qtdeclarative tslib tslib-conf tslib-calibrate fontconfig fontconfig-utils ttf-bitstream-vera selphy udev-extraconf gphoto2 pi-blaster"
+RDEPENDS_${PN} = "qtbase-plugins qtdeclarative-qmlplugins qtquickcontrols qtquickcontrols2 qtgraphicaleffects qtquickcontrols2-qmlplugins qtvirtualkeyboard qtdeclarative tslib tslib-conf tslib-calibrate fontconfig fontconfig-utils ttf-bitstream-vera selphy udev-extraconf gphoto2 pi-blaster imagemagick"
 
 do_install_append() {
     install -m 0755 -d ${D}${bindir}
