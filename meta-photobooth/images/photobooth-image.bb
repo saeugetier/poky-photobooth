@@ -2,11 +2,11 @@ LICENSE = "MIT"
 
 include recipes-core/images/core-image-base.bb 
 
-IMAGE_FEATURES += "splash"
+IMAGE_FEATURES += " splash"
 
 DEPENDS += "bcm2835-bootfiles"
 
-#SPLASH = "psplash-photobooth"
+SPLASH = "psplash-default"
 
 KERNEL_MODULE_AUTOLOAD += "usbtouchscreen"
 
@@ -17,6 +17,8 @@ KERNEL_MODULE_AUTOLOAD += "usbtouchscreen"
 #PACKAGECONFIG_GL_pn-qtbase = "gles2 linuxfb"
 
 DISTRO_FEATURES_remove = "x11 wayland"
+
+DISTRO_FEATURES += "ipv4 ipv6 wifi"
 
 BAD_RECOMMENDATIONS = "avahi-daemon avahi-autoipd"
 
@@ -33,4 +35,6 @@ ROOTFS_POSTPROCESS_COMMAND += " \
  "
 
 export IMAGE_BASENAME = "photobooth-image"
-	
+
+
+BBMASK = ".*/meta-raspberrypi/recipes-core/psplash"	
