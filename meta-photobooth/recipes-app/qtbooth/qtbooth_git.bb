@@ -12,7 +12,7 @@ PV = "${PVBASE}+${SRCPV}"
 BB_SRCREV_POLICY = "clear"
 SRC_URI = "git://github.com/saeugetier/photobooth.git;branch=develop file://x_qtbooth.profile.sh"
 #SRCREV = "${AUTOREV}"
-SRCREV = "63cfc6c263438a09a38957145ada18d72daa6874"
+SRCREV = "87bad4760a4658380b0ce5146dc98378b62945e6"
 S = "${WORKDIR}/git"
 
 inherit qmake5
@@ -31,6 +31,7 @@ do_install_append() {
     install -m 0755 -d ${D}/home/root/Pictures
     install -m 0755 -d ${D}/home/root/Pictures/collage
     install -m 0755 -d ${D}/home/root/Pictures/recycle
+    install -m 0755 -d ${D}/home/root/.local/share/saeugetier/qtbooth
 }
 
 FILES_${PN} += "${datadir}"
