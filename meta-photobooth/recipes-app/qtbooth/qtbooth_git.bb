@@ -12,7 +12,7 @@ PV = "${PVBASE}+${SRCPV}"
 BB_SRCREV_POLICY = "clear"
 SRC_URI = "git://github.com/saeugetier/photobooth.git;branch=develop file://x_qtbooth.profile.sh"
 #SRCREV = "${AUTOREV}"
-SRCREV = "87bad4760a4658380b0ce5146dc98378b62945e6"
+SRCREV = "60762987c48413898cefdd49bab4c43b3e1fba36"
 S = "${WORKDIR}/git"
 
 inherit qmake5

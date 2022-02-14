@@ -4,9 +4,9 @@ include recipes-core/images/core-image-base.bb
 
 IMAGE_FEATURES += " splash"
 
-DEPENDS += "bcm2835-bootfiles"
+#DEPENDS += "bcm2835-bootfiles"
 
-SPLASH = "psplash-default"
+#SPLASH = "psplash-default"
 
 KERNEL_MODULE_AUTOLOAD += "usbtouchscreen"
 
