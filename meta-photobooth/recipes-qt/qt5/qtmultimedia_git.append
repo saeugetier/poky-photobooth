@@ -1,0 +1,2 @@
+
+PACKAGECONFIG_remove = "gstreamer1.0-plugins-bad gst-plugins-bad"
