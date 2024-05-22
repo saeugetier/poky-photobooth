@@ -11,7 +11,7 @@ RDEPENDS_${PN} = "qtmultimedia"
 
 SRC_URI = "git://github.com/saeugetier/qtmultimedia-gphoto.git"
 
-SRCREV = "484844d562e237276fac4fa461a0bc92e708b906"
+SRCREV = "b6bbab8b9e661409653fc1194efc3f737ec3dbd7"
 #SRCREV = "${AUTOREV}"
 
 FILES_${PN} += "/usr/lib/plugins/mediaservice/libgphoto.so"

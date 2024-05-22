@@ -10,9 +10,9 @@ PVBASE := "${PV}"
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}-${PVBASE}:"
 PV = "${PVBASE}+${SRCPV}"
 BB_SRCREV_POLICY = "clear"
-SRC_URI = "git://github.com/saeugetier/photobooth.git;branch=develop file://x_qtbooth.profile.sh"
+SRC_URI = "git://github.com/saeugetier/photobooth.git;branch=master file://x_qtbooth.profile.sh"
 #SRCREV = "${AUTOREV}"
-SRCREV = "57b21e2b624a4213cd395415a03517cff4ed2d50"
+SRCREV = "55e575fadcd845abf107d403b0e278da18c5b68d"
 S = "${WORKDIR}/git"
 
 inherit qmake5
