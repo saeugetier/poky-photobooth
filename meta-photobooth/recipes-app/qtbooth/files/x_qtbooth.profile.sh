@@ -16,4 +16,17 @@ else
    sleep 2
 fi
 
-qtbooth -plugin Tslib &
+# Loop to restart qtbooth if it crashes (returns non-zero exit code)
+while true; do
+    qtbooth -plugin Tslib
+    EXIT_CODE=$?
+    if [ $EXIT_CODE -eq 0 ]; then
+        echo "qtbooth exited normally with code $EXIT_CODE, not restarting."
+        break
+    else
+        echo "qtbooth crashed with exit code $EXIT_CODE, restarting..."
+        # Optional: Add a sleep to prevent rapid restart in case of continuous crashes
+        sleep 1
+    fi
+done
+
